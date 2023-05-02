@@ -3,7 +3,7 @@ import Header from "../components/shared/header/Header";
 
 const Main = () => {
   return (
-    <div className="bg-transparent">
+    <div className="">
       <Header />
     </div>
   );

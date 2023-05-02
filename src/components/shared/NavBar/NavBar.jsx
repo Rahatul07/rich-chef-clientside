@@ -1,427 +1,201 @@
 import React, { useState } from "react";
 import logo from "../../../assets/logo/02-01.png";
-
+import { NavLink } from "react-router-dom";
+import profile from "../../../assets/icon/profile.jpg";
 const NavBar = () => {
-  const [searchInput, setSearchInput] = useState(true);
-  const [mdOptionsToggle, setMdOptionsToggle] = useState(true);
-  const [showMenu, setShowMenu] = useState(false);
-  return (
-    <div className="dark:bg-gray-900">
-      <div>
-        <div className="relative">
-          {/* For md screen size */}
-          <div
-            id="md-searchbar"
-            className={`${
-              mdOptionsToggle ? "hidden" : "flex"
-            } bg-white dark:bg-gray-900 lg:hidden py-5 px-6 items-center justify-between`}
-          >
-            <div className="flex items-center space-x-3 text-white dark:text-white">
-              <div>
-                <svg
-                  className="fill-stroke"
-                  width={20}
-                  height={20}
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M18.9984 18.9999L14.6484 14.6499"
-                    stroke="currentColor"
-                    strokeWidth="1.25"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <input
-                type="text"
-                placeholder="Search your Destination..."
-                className="text-sm leading-none dark:text-gray-300 dark:bg-gray-900 text-gray-600 focus:outline-none"
-              />
-            </div>
-            <div className="space-x-6">
-              <button
-                aria-label="view favourites"
-                className="bg-orange-400 py-2 px-3 rounded-lg"
-              >
-                Login
-              </button>
-              <button
-                aria-label="go to cart"
-                className="text-white dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
-              >
-                sk
-              </button>
-            </div>
-          </div>
-          {/* For md screen size */}
-          {/* For large screens */}
-          <div className="dark:bg-gray-900  px-6 py-9">
-            <div className="container mx-auto flex items-center justify-between">
-              <h1
-                className="md:w-2/12 cursor-pointer text-white dark:text-white"
-                aria-label="the Crib."
-              >
-                <img className="w-24  fill-white" src={logo} alt="" />
-              </h1>
-              <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white text-base text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    News
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white text-base text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Destination
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white text-base text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white text-base text-white focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-              <div className="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
-                <div className="hidden lg:flex items-center">
-                  <button
-                    onClick={() => setSearchInput(!searchInput)}
-                    aria-label="search items"
-                    className="text-white dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    <svg
-                      className="fill-stroke"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M5 11C5 15.4183 8.58172 19 13 19C17.4183 19 21 15.4183 21 11C21 6.58172 17.4183 3 13 3C8.58172 3 5 6.58172 5 11Z"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M2.99961 20.9999L7.34961 16.6499"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Search your Destination..."
-                    className={` ${
-                      searchInput ? "hidden" : ""
-                    } text-sm dark:bg-gray-900 dark:placeholder-gray-300 text-gray-600 rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1`}
-                  />
-                </div>
-                <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                  <button
-                    aria-label="view favourites"
-                    className="bg-orange-400 py-2 px-3 rounded-lg"
-                  >
-                    Login
-                  </button>
-                  <button
-                    aria-label="go to cart"
-                    className="text-white dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    Name
-                  </button>
-                </div>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-                <div className="flex lg:hidden">
-                  <button
-                    aria-label="show options"
-                    onClick={() => setMdOptionsToggle(!mdOptionsToggle)}
-                    className="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600"
-                  >
-                    <svg
-                      className="fill-stroke"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 6H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M10 12H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M6 18H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    aria-label="open menu"
-                    onClick={() => setShowMenu(true)}
-                    className="text-white dark:text-white dark:hover:text-gray-300 md:hidden focus:outline-none focus:ring-2 rounded focus:ring-gray-600"
-                  >
-                    <svg
-                      className="fill-stroke"
-                      width={24}
-                      height={24}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4 6H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M10 12H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M6 18H20"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* For small screen */}
-          <div
-            id="mobile-menu"
-            className={`${
-              showMenu ? "flex" : "hidden"
-            } absolute dark:bg-gray-900 z-10 inset-0 md:hidden bg-white flex-col h-screen w-full`}
-          >
-            <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
-              <div className="flex items-center space-x-3">
-                <div>
-                  <svg
-                    className="fill-stroke text-black dark:text-white"
-                    width={20}
-                    height={20}
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
-                      stroke="currentColor"
-                      strokeWidth="1.25"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M18.9984 18.9999L14.6484 14.6499"
-                      stroke="currentColor"
-                      strokeWidth="1.25"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search your Destination..."
-                  className="text-sm dark:bg-gray-900 text-gray-600 placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none"
-                />
-              </div>
-              <button
-                onClick={() => setShowMenu(false)}
-                aria-label="close menu"
-                className="focus:outline-none focus:ring-2 rounded focus:ring-gray-600"
+  return (
+    <div className=" mx-auto px-10 bg-black bg-opacity-60 ">
+      <div className="navbar   text-white ">
+        <div className="navbar-start">
+          <img className="h-14 w-20 " src={logo} alt="" />
+        </div>
+        <div className="navbar-center   h-12 pr-10 hidden lg:flex">
+          <ul className="pl-3 menu-horizontal px-1">
+            <li className="ml-5">
+              <NavLink
+                to="/"
+                aria-label="Home"
+                title="Home"
+                className={({ isActive }) => (isActive ? "active" : "default")}
               >
-                <svg
-                  className="fill-stroke text-black dark:text-white"
-                  width={16}
-                  height={16}
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 4L4 12"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M4 4L12 12"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+                Home
+              </NavLink>
+            </li>
+
+            <li className="ml-5  ">
+              <NavLink
+                to="/Blogs"
+                aria-label="Blogs"
+                title="Blogs"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Blogs
+              </NavLink>
+            </li>
+            <li className="ml-5">
+              <NavLink
+                to="/logIn"
+                aria-label="logIn"
+                title="logIn"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                LogIn
+              </NavLink>
+            </li>
+            <li className="ml-5">
+              <NavLink
+                to="/signUp"
+                aria-label="signUp"
+                title="signUp"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                sigUp
+              </NavLink>
+            </li>
+
+            <li className="ml-5">
+              <NavLink
+                to="/logOut"
+                aria-label="logOut"
+                title="logOut"
+                className={({ isActive }) => (isActive ? "active" : "default")}
+              >
+                Log Out
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-end ">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img title="md Rahat" src={profile} />
             </div>
-            <div className="mt-6 p-4">
-              <ul className="flex flex-col space-y-6">
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white flex items-center justify-between hover:underline text-base text-black focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    News
-                    <div>
-                      <svg
-                        className="fill-stroke text-black dark:text-white"
-                        width={12}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+          </label>
+          {/* <Link to="/blogs">
+            <button className="btn btn-primary">Learn More</button>
+          </Link> */}
+        </div>
+
+        <div className="ml-10 mr-5 lg:hidden">
+          <button
+            aria-label="Open Menu"
+            title="Open Menu"
+            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
+              />
+              <path
+                fill="currentColor"
+                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
+              />
+              <path
+                fill="currentColor"
+                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
+              />
+            </svg>
+          </button>
+          {isMenuOpen && (
+            <div className="absolute z-10 top-0 left-0 w-full">
+              <div className="p-5 bg-white border rounded shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <div className="navbar-start">
+                      <img className="" src={logo} alt="" />
+                    </div>
+                  </div>
+                  <div>
+                    <button
+                      aria-label="Close Menu"
+                      title="Close Menu"
+                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
                         <path
-                          d="M4.5 3L7.5 6L4.5 9"
-                          stroke="currentColor"
-                          strokeWidth="0.75"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                          fill="currentColor"
+                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
                         />
                       </svg>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white flex items-center justify-between hover:underline text-base text-black focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    Destination
-                    <div>
-                      <svg
-                        className="fill-stroke text-black dark:text-white"
-                        width={12}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.5 3L7.5 6L4.5 9"
-                          stroke="currentColor"
-                          strokeWidth="0.75"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white flex items-center justify-between hover:underline text-base text-black focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    Blog
-                    <div>
-                      <svg
-                        className="fill-stroke text-black dark:text-white"
-                        width={12}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.5 3L7.5 6L4.5 9"
-                          stroke="currentColor"
-                          strokeWidth="0.75"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:void(0)"
-                    className="dark:text-white flex items-center justify-between hover:underline text-base text-black focus:outline-none focus:ring-2 focus:ring-gray-800"
-                  >
-                    Contact
-                    <div>
-                      <svg
-                        className="fill-stroke text-black dark:text-white"
-                        width={12}
-                        height={12}
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M4.5 3L7.5 6L4.5 9"
-                          stroke="currentColor"
-                          strokeWidth="0.75"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                  </a>
-                </li>
-              </ul>
+                    </button>
+                  </div>
+                </div>
+                <nav>
+                  <div className="navbar-center  lg:flex">
+                    <ul className="pl-3  px-1">
+                      <li className="ml-5 mb-3">
+                        <NavLink
+                          to="/"
+                          aria-label="Home"
+                          title="Home"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          Home
+                        </NavLink>
+                      </li>
+
+                      <li className="ml-5 mb-3">
+                        <NavLink
+                          to="/Blogs"
+                          aria-label="Blogs"
+                          title="Blogs"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          Blogs
+                        </NavLink>
+                      </li>
+                      <li className="ml-5">
+                        <NavLink
+                          to="/logIn"
+                          aria-label="logIn"
+                          title="logIn"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          LogIn
+                        </NavLink>
+                      </li>
+                      <li className="ml-5">
+                        <NavLink
+                          to="/signUp"
+                          aria-label="signUp"
+                          title="signUp"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          sigUp
+                        </NavLink>
+                      </li>
+
+                      <li className="ml-5">
+                        <NavLink
+                          to="/logOut"
+                          aria-label="logOut"
+                          title="logOut"
+                          className={({ isActive }) =>
+                            isActive ? "active" : "default"
+                          }
+                        >
+                          Log Out
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
             </div>
-            <div className="h-full flex items-end">
-              <ul className="flex flex-col space-y-8 bg-gray-50 w-full py-10 p-4 dark:bg-gray-800">
-                <li className="bg-orange-400 py-2 px-3 rounded-lg">Login</li>
-                <li>name</li>
-              </ul>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
