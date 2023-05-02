@@ -4,8 +4,8 @@ import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Card = ({ chef }) => {
-  console.log(chef);
   const {
+    id,
     img_url,
     likes,
     name,
@@ -38,9 +38,9 @@ const Card = ({ chef }) => {
             <p className="mb-3  text-sm bg-primary bg-opacity-30 mx-auto italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-3 ">
               {short_bio}
             </p>
-            <div>
-              <Link>
-                <button className="btn btn-primary rounded-none bg-neutral-900  font-com text-sm capitalize text-white shadow shadow-black/60">
+            <div className="card-actions inline-flex items-center justify-between">
+              <Link to={`/singleCard/${id}`}>
+                <button className="btn btn-primary rounded-none bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">
                   Learn more
                 </button>
               </Link>
