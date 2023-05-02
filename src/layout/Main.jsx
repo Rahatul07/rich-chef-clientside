@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "../components/shared/header/Header";
 
 const Main = () => {
   return (
-    <div>
-      <h1>This is main</h1>
+    <div className="bg-black">
+      <Header />
     </div>
   );
 };
