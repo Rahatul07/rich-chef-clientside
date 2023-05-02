@@ -8,14 +8,16 @@ import { Carousel } from "flowbite-react";
 
 const Body = () => {
   return (
-    <div className="h-screen mb-10 ">
-      <Carousel>
-        <img src={carouselImage1} alt="..." />
-        <img src={carouselImage2} alt="..." />
-        <img src={carouselImage3} alt="..." />
-        <img src={carouselImage4} alt="..." />
-        <img src={carouselImage5} alt="..." />
-      </Carousel>
+    <div className="">
+      <div className="h-screen mb-10  top-0">
+        <Carousel>
+          <img src={carouselImage1} alt="..." />
+          <img src={carouselImage2} alt="..." />
+          <img src={carouselImage3} alt="..." />
+          <img src={carouselImage4} alt="..." />
+          <img src={carouselImage5} alt="..." />
+        </Carousel>
+      </div>
     </div>
   );
 };
