@@ -1,6 +1,4 @@
-// import React from "react";
-// import NavBar from "../NavBar/NavBar";
-// import Body from "../Body/Body";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import React, { useState } from "react";
 import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
@@ -13,7 +11,7 @@ const Header = () => {
         <div className="navbar-start">
           <img className="h-14 w-20 " src={logo} alt="" />
         </div>
-        <div className="navbar-center   h-12 pr-10 hidden lg:flex">
+        <div className="navbar-center text-2xl uppercase h-12 pr-10 hidden lg:flex">
           <ul className="pl-3 menu-horizontal px-1">
             <li className="ml-5">
               <NavLink
@@ -69,7 +67,15 @@ const Header = () => {
             </li>
           </ul>
         </div>
+
         <div className="navbar-end ">
+          <div>
+            <p className="flex items-center justify-between  mr-5 relative text-2xl">
+              <AiFillHeart className="text-red-600 " />
+
+              <AiOutlineHeart />
+            </p>
+          </div>
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img title="md Rahat" src={profile} />
