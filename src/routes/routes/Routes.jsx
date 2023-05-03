@@ -4,6 +4,7 @@ import Home from "../../pages/Home/Home";
 import SingleCard from "../../pages/SingleCard/SingleCard";
 import ErrorMessage from "../../pages/ErrorMessage/ErrorMessage";
 import Registration from "../../pages/Registration/Registration";
+import LogIn from "../../pages/LogIn/LogIn";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration />,
+      },
+      {
+        path: "/logIn",
+        element: <LogIn />,
       },
     ],
   },
