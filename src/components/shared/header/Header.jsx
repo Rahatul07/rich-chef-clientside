@@ -2,10 +2,11 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import React, { useContext } from "react";
 import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
-import profile from "../../../assets/icon/profile.jpg";
+// import profile from "../../../assets/icon/profile.jpg";
 import { AuthContext } from "../../../contexts/AuthProvider";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogOut = () => {
@@ -57,7 +58,7 @@ const Header = () => {
                       isActive ? "default" : "active"
                     }
                   >
-                    Log Out
+                    LogOut
                   </NavLink>
                 </li>
               </>
@@ -103,7 +104,7 @@ const Header = () => {
           </div>
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img title="md Rahat" src={profile} />
+              <img title={user?.displayName} src={user?.photoURL} />
             </div>
           </label>
           {/* <Link to="/blogs">

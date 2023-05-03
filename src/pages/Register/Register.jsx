@@ -4,9 +4,10 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { user, createUser, updateUserProfile } = useContext(AuthContext);
+  const { auth, setUser, createUser, setLoading } = useContext(AuthContext);
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
@@ -22,6 +23,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
+    const photoUrl = form.photo_url.value;
     // console.log(name, email, password, confirm);
     if (password !== confirm) {
       setError("Your password does not match");
@@ -32,11 +34,19 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        updateUserProfile(name)
-          .then((updateName) => {
-            console.log(user, updateName);
+        setLoading(true);
+        // const loggedUser = result.user;
+        // console.log(loggedUser);
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photoUrl,
+        })
+          .then(() => {
+            setUser(result.user);
+            setLoading(false);
+          })
+          .catch((error) => {
+            setError(error.code);
           })
           .catch((error) => {
             console.log(error);
@@ -82,6 +92,18 @@ const Register = () => {
                     name="name"
                     placeholder="name"
                     className="input input-bordered glass  text-white "
+                    required
+                  />
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text text-white">Photo Url</span>
+                  </label>
+                  <input
+                    type="url"
+                    name="photo_url"
+                    placeholder="Place your photo url"
+                    className="input input-bordered glass  text-white"
                     required
                   />
                 </div>
