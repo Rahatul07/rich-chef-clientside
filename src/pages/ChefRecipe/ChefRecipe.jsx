@@ -2,7 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Recipes from "../Recipes/Recipes";
 
-const SingleCard = () => {
+const ChefRecipe = () => {
   const { id } = useParams();
   const chef = useLoaderData();
   console.log(id);
@@ -78,4 +78,4 @@ const SingleCard = () => {
   );
 };
 
-export default SingleCard;
+export default ChefRecipe;

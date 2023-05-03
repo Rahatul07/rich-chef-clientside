@@ -35,13 +35,13 @@ const Card = ({ chef }) => {
             <p className="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               Experience: {year_of_experience} years
             </p>
-            <p className="mb-3  text-sm bg-primary bg-opacity-30 mx-auto italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-3 ">
+            <p className="mb-3  text-sm bg-primary bg-opacity-30 mx-auto italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 p-2 ">
               {short_bio}
             </p>
             <div className="card-actions inline-flex items-center justify-between">
-              <Link to={`/singleCard/${id}`}>
-                <button className="btn btn-primary rounded-none bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">
-                  Learn more
+              <Link to={`/chefRecipe/${id}`}>
+                <button className="btn btn-primary rounded-none bg-neutral-900 py-1 mb-3 px-3.5 font-com text-sm  text-white shadow uppercase shadow-black/60">
+                  View Recipes
                 </button>
               </Link>
             </div>

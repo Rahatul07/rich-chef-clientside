@@ -1,12 +1,12 @@
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
 import profile from "../../../assets/icon/profile.jpg";
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className=" mx-auto   px-10 bg-black -mb-3 ">
+    <div className=" mx-auto   px-10 bg-black -mb-3 shadow-lg shadow-slate-400 ">
       <div className="navbar   text-white ">
         <div className="navbar-start">
           <img className="h-14 w-20 " src={logo} alt="" />
@@ -26,9 +26,9 @@ const Header = () => {
 
             <li className="ml-5  ">
               <NavLink
-                to="/Blogs"
-                aria-label="Blogs"
-                title="Blogs"
+                to="/blogs"
+                aria-label="blogs"
+                title="blogs"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
                 Blogs
@@ -86,7 +86,7 @@ const Header = () => {
         </Link> */}
         </div>
 
-        <div className="ml-10 mr-5 lg:hidden">
+        {/* <div className="ml-10 mr-5 lg:hidden">
           <button
             aria-label="Open Menu"
             title="Open Menu"
@@ -151,9 +151,9 @@ const Header = () => {
 
                       <li className="ml-5 mb-3">
                         <NavLink
-                          to="/Blogs"
-                          aria-label="Blogs"
-                          title="Blogs"
+                          to="/blogs"
+                          aria-label="blogs"
+                          title="blogs"
                           className={({ isActive }) =>
                             isActive ? "active" : "default"
                           }
@@ -204,7 +204,7 @@ const Header = () => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
     // <div>

@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
-import SingleCard from "../../pages/SingleCard/SingleCard";
 import ErrorMessage from "../../pages/ErrorMessage/ErrorMessage";
 import Registration from "../../pages/Registration/Registration";
 import LogIn from "../../pages/LogIn/LogIn";
+import ChefRecipe from "../../pages/ChefRecipe/ChefRecipe";
+import Blogs from "../../pages/Blogs/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -19,8 +20,8 @@ export const router = createBrowserRouter([
           fetch("https://rich-chef-server-rahatul07.vercel.app/chefs"),
       },
       {
-        path: "/singleCard/:id",
-        element: <SingleCard />,
+        path: "/chefRecipe/:id",
+        element: <ChefRecipe />,
         loader: ({ params }) =>
           fetch(
             `https://rich-chef-server-rahatul07.vercel.app/chefs/${params.id}`
@@ -33,6 +34,10 @@ export const router = createBrowserRouter([
       {
         path: "/logIn",
         element: <LogIn />,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs />,
       },
     ],
   },
