@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Ingredients from "../Ingredients/Ingredients";
 
 const Recipes = ({ recipe }) => {
+  const [fold, setFold] = useState();
   console.log(recipe);
   const { cooking_method, ingredients, rating, recipe_img, recipe_name } =
     recipe;
@@ -18,10 +19,37 @@ const Recipes = ({ recipe }) => {
               special
             </sup>
           </h2>
-          <p className="text-white">
-            <span className="text-primary font-bold">COOKING METHOD:</span>{" "}
-            {cooking_method}
-          </p>
+          {!fold ? (
+            <>
+              <p className="text-white">
+                {cooking_method.substring(0, 100)}...{" "}
+                <span
+                  className="cursor-pointer text-secondary link-hover"
+                  onClick={() => setFold(!fold)}
+                >
+                  See more
+                </span>
+              </p>
+            </>
+          ) : (
+            <p className="text-white">
+              {cooking_method}{" "}
+              <span
+                className="cursor-pointer text-secondary link-hover"
+                onClick={() => setFold(!fold)}
+              >
+                Read less
+              </span>
+            </p>
+          )}
+          {/* <p className="text-white">
+            <span className="text-primary font-bold">COOKING METHOD:</span>
+            {cooking_method < 100 ? (
+              <>{cooking_method}</>
+            ) : (
+              <>{cooking_method.slice(0, 100)}</>
+            )}
+          </p> */}
           <p className="text-white">
             <span className="text-primary font-bold">RATING:</span> {rating}
           </p>
