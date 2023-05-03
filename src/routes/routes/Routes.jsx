@@ -2,11 +2,13 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
 import SingleCard from "../../pages/SingleCard/SingleCard";
+import ErrorMessage from "../../pages/ErrorMessage/ErrorMessage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorMessage />,
     children: [
       {
         path: "/",
