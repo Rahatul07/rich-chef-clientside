@@ -95,11 +95,11 @@ const Header = () => {
 
         <div className="navbar-end ">
           <div>
-            <p className="flex items-center justify-between  mr-5 relative text-2xl">
+            <div className="flex items-center justify-between  mr-5 relative text-2xl">
               <AiFillHeart className="text-red-600 " />
 
               <AiOutlineHeart />
-            </p>
+            </div>
           </div>
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">

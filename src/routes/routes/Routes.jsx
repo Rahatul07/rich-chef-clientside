@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
 import ErrorMessage from "../../pages/ErrorMessage/ErrorMessage";
-import Registration from "../../pages/Registration/Registration";
+import Register from "../../pages/Register/Register";
 import LogIn from "../../pages/LogIn/LogIn";
 import ChefRecipe from "../../pages/ChefRecipe/ChefRecipe";
 import Blogs from "../../pages/Blogs/Blogs";
@@ -33,8 +33,8 @@ export const router = createBrowserRouter([
           ),
       },
       {
-        path: "/register",
-        element: <Registration />,
+        path: "register",
+        element: <Register />,
       },
       {
         path: "/logIn",

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 
-const Registration = () => {
+const Register = () => {
   const { user, createUser, updateUserProfile } = useContext(AuthContext);
 
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -168,4 +168,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default Register;
