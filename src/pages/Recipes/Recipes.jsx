@@ -3,7 +3,7 @@ import Ingredients from "../Ingredients/Ingredients";
 
 const Recipes = ({ recipe }) => {
   const [fold, setFold] = useState();
-  console.log(recipe);
+
   const { cooking_method, ingredients, rating, recipe_img, recipe_name } =
     recipe;
   return (
@@ -53,12 +53,12 @@ const Recipes = ({ recipe }) => {
           <p className="text-white">
             <span className="text-primary font-bold">RATING:</span> {rating}
           </p>
-          <p className="text-white ">
+          <div className="text-white ">
             <span className="text-primary font-bold">INGREDIENTS:</span>
-            {ingredients.map((ingredient) => (
-              <Ingredients key={ingredient.index} ingredient={ingredient} />
+            {ingredients.map((ingredient, index) => (
+              <Ingredients key={index} ingredient={ingredient} />
             ))}
-          </p>
+          </div>
           <div></div>
         </div>
       </div>

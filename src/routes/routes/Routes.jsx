@@ -6,6 +6,7 @@ import Registration from "../../pages/Registration/Registration";
 import LogIn from "../../pages/LogIn/LogIn";
 import ChefRecipe from "../../pages/ChefRecipe/ChefRecipe";
 import Blogs from "../../pages/Blogs/Blogs";
+import PrivateRoute from "../privateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/chefRecipe/:id",
-        element: <ChefRecipe />,
+        element: (
+          <PrivateRoute>
+            <ChefRecipe />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://rich-chef-server-rahatul07.vercel.app/chefs/${params.id}`

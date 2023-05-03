@@ -1,21 +1,84 @@
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import coverImage from "../../assets/homeCarousel/02.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const LogIn = () => {
+  const emailRef = useRef();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
-  console.log(setError);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { logIn, googleSignIn, gitHubSignIn, resetPassword } =
+    useContext(AuthContext);
+  const from = location.state?.from?.pathname || "/";
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  const handleSignIn = () => {};
-  const handlePasswordReset = () => {};
-  const handleGoogleSignIn = () => {};
-  const handleGithubSignIn = () => {};
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(email, password);
+    logIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: "User has been created successfully!",
+        });
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleGithubSignIn = () => {
+    gitHubSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handlePasswordReset = () => {
+    const email = emailRef.current;
+    if (!email) {
+      alert("provide email");
+      return;
+    }
+    resetPassword()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <div

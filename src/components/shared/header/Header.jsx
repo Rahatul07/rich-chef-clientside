@@ -1,10 +1,22 @@
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
 import profile from "../../../assets/icon/profile.jpg";
+import { AuthContext } from "../../../contexts/AuthProvider";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
   // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className=" mx-auto   px-10 bg-black -mb-3 shadow-lg shadow-slate-400 ">
       <div className="navbar   text-white ">
@@ -34,37 +46,50 @@ const Header = () => {
                 Blogs
               </NavLink>
             </li>
-            <li className="ml-5">
-              <NavLink
-                to="/logIn"
-                aria-label="logIn"
-                title="logIn"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                LogIn
-              </NavLink>
-            </li>
-            <li className="ml-5">
-              <NavLink
-                to="/register"
-                aria-label="register"
-                title="register"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                REGISTER
-              </NavLink>
-            </li>
-
-            <li className="ml-5">
-              <NavLink
-                to="/logOut"
-                aria-label="logOut"
-                title="logOut"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Log Out
-              </NavLink>
-            </li>
+            {user ? (
+              <>
+                <li className="ml-5">
+                  <NavLink
+                    aria-label="logOut"
+                    title="logOut"
+                    onClick={handleLogOut}
+                    className={({ isActive }) =>
+                      isActive ? "default" : "active"
+                    }
+                  >
+                    Log Out
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                {" "}
+                <li className="ml-5">
+                  <NavLink
+                    to="/logIn"
+                    aria-label="logIn"
+                    title="logIn"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    LogIn
+                  </NavLink>
+                </li>
+                <li className="ml-5">
+                  <NavLink
+                    to="/register"
+                    aria-label="register"
+                    title="register"
+                    className={({ isActive }) =>
+                      isActive ? "active" : "default"
+                    }
+                  >
+                    REGISTER
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 

@@ -1,16 +1,61 @@
-import React, { useState } from "react";
 import coverImage from "../../assets/homeCarousel/01.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
+
 const Registration = () => {
+  const { user, createUser, updateUserProfile } = useContext(AuthContext);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
-  console.log(setError);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-  const handleSignUp = () => {};
+  const handleSignUp = (event) => {
+    setError("");
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirm.value;
+    // console.log(name, email, password, confirm);
+    if (password !== confirm) {
+      setError("Your password does not match");
+      return;
+    } else if (!/^(?=.*[0-9]).*$/.test(password)) {
+      setError("Password must contain at least one Digit.");
+      return;
+    }
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(name)
+          .then((updateName) => {
+            console.log(user, updateName);
+          })
+          .catch((error) => {
+            console.log(error);
+            setError(error);
+          });
+        Swal.fire({
+          icon: "success",
+          title: "Successful",
+          text: "User has been created successfully!",
+        });
+        form.reset();
+        setError("");
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error);
+      });
+  };
+
   return (
     <div>
       <div
