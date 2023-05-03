@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Home from "../../pages/Home/Home";
 import SingleCard from "../../pages/SingleCard/SingleCard";
 import ErrorMessage from "../../pages/ErrorMessage/ErrorMessage";
+import Registration from "../../pages/Registration/Registration";
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
           fetch(
             `https://rich-chef-server-rahatul07.vercel.app/chefs/${params.id}`
           ),
+      },
+      {
+        path: "/register",
+        element: <Registration />,
       },
     ],
   },

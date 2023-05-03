@@ -46,12 +46,12 @@ const Header = () => {
             </li>
             <li className="ml-5">
               <NavLink
-                to="/signUp"
-                aria-label="signUp"
-                title="signUp"
+                to="/register"
+                aria-label="register"
+                title="register"
                 className={({ isActive }) => (isActive ? "active" : "default")}
               >
-                sigUp
+                REGISTER
               </NavLink>
             </li>
 
@@ -175,14 +175,14 @@ const Header = () => {
                       </li>
                       <li className="ml-5">
                         <NavLink
-                          to="/signUp"
-                          aria-label="signUp"
-                          title="signUp"
+                          to="/register"
+                          aria-label="register"
+                          title="register"
                           className={({ isActive }) =>
                             isActive ? "active" : "default"
                           }
                         >
-                          sigUp
+                          REGISTER
                         </NavLink>
                       </li>
 
