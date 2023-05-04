@@ -10,8 +10,8 @@ import {
 
 const chefFooter = () => {
   return (
-    <>
-      <footer className="footer p-10 bg-gray-800  px-20 text-gray-300 ">
+    <div className="">
+      <footer className="footer p-10 bg-gray-800  px-20 text-gray-300 grid grid-cols-2  lg:grid-cols-6">
         <div>
           <span className="footer-title">Services</span>
           <a className="link link-hover">Restaurant</a>
@@ -80,7 +80,7 @@ const chefFooter = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 
