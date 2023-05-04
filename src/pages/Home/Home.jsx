@@ -3,6 +3,8 @@ import Body from "../../components/shared/Body/Body";
 import Card from "../Card/Card";
 import { useLoaderData } from "react-router-dom";
 import FlavorExplosion from "../Flavor_Explosion/FlavorExplosion";
+import Banner from "../Banner/Banner";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   const chefs = useLoaderData();
@@ -16,6 +18,8 @@ const Home = () => {
         ))}
       </div>
       <FlavorExplosion />
+      <Banner />
+      <Reviews />
     </div>
   );
 };
