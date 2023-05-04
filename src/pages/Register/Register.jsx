@@ -1,17 +1,18 @@
 import coverImage from "../../assets/homeCarousel/01.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { auth, setUser, createUser, setLoading } = useContext(AuthContext);
+  const { auth, setUser, createUser, setLoading, logOut } =
+    useContext(AuthContext);
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [error, setError] = useState("");
-
+  const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
@@ -34,6 +35,8 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        logOut();
+        navigate("/login");
         setLoading(true);
 
         updateProfile(auth.currentUser, {

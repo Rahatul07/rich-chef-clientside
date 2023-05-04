@@ -28,6 +28,9 @@ const Blogs = () => {
           )}
         </Pdf>
         <div ref={ref} className="w-10/12 mx-auto mt-20  text-grapy-300">
+          <h1 className="text-5xl text-primary font-bold text-center pb-10 underline">
+            SOME ESSENTIAL QUESTIONS AND ANSWERS
+          </h1>
           <div className=" mb-10">
             <h1 className="text-gray-300 text-2xl font-bold ">
               01. What are the differences between uncontrolled and controlled

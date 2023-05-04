@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="h-96 w-auto bg-cover  pb-24 mt-10 mb-10 text-center"
+        className="h-96 w-auto bg-cover  pb-24 mt-36 mb-28 text-center"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url(${coverImage})`,
         }}

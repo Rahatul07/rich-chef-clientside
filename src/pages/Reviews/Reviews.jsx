@@ -12,12 +12,12 @@ const Reviews = () => {
   return (
     <>
       <h1
-        className=" font-bold  text-primary text-center text-5xl mb-10"
+        className=" font-bold  text-primary text-center text-5xl mb-10 mt-20"
         style={{ fontFamily: "'Montserrat', cursive" }}
       >
         FOOD REVIEWS
       </h1>
-      <div className="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2">
+      <div className="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-20">
         <div className="card card-side glass shadow-xl h-auto mb-5">
           <figure>
             <img
