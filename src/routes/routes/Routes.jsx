@@ -7,6 +7,7 @@ import LogIn from "../../pages/LogIn/LogIn";
 import ChefRecipe from "../../pages/ChefRecipe/ChefRecipe";
 import Blogs from "../../pages/Blogs/Blogs";
 import PrivateRoute from "../privateRoute/PrivateRoute";
+import Footer from "../../components/shared/footer/chefFooter";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs />,
+      },
+      {
+        path: "/footer",
+        element: <Footer />,
       },
     ],
   },

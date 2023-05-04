@@ -24,7 +24,7 @@ const Register = () => {
     const password = form.password.value;
     const confirm = form.confirm.value;
     const photoUrl = form.photo_url.value;
-    // console.log(name, email, password, confirm);
+
     if (password !== confirm) {
       setError("Your password does not match");
       return;
@@ -35,8 +35,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         setLoading(true);
-        // const loggedUser = result.user;
-        // console.log(loggedUser);
+
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: photoUrl,
