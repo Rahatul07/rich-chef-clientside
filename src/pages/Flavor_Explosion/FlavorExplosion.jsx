@@ -9,14 +9,15 @@ const FlavorExplosion = () => {
   return (
     <div className="mb-10 w-10/12 mx-auto">
       <h1
-        className=" font-bold  text-primary text-center text-5xl "
-        style={{ fontFamily: "'Caveat', cursive" }}
+        className=" font-bold  text-primary text-center text-5xl mb-10"
+        style={{ fontFamily: "'Montserrat', cursive" }}
       >
         FLAVOR EXPLOSION
       </h1>
+
       <h1
-        className="text-gray-300 text-5xl font-serif mt-3"
-        style={{ fontFamily: "'Kalam', cursive" }}
+        className="text-gray-300 text-5xl font-normal text-center mt-3 mb-10"
+        style={{ fontFamily: "'Satisfy', cursive" }}
       >
         A Rich-Chef restaurant beyond the boundaries of taste. If you love
         Rich-Chef then you will love us.
@@ -35,7 +36,7 @@ const FlavorExplosion = () => {
             >
               GRILLED STEAK WITH CHIMICHURRI SAUCE
             </h1>
-            <p className="text-xl mb-5">
+            <p className="text-xl text-gray-300 mb-5">
               Best steak for Chimichurri Sauce - in South America, cuts such as
               flank, flat iron and skirt are popular for serving with Chimchurri
               Sauce because they have really great beefy flavour that pairs so
@@ -50,14 +51,13 @@ const FlavorExplosion = () => {
               className="text-3xl text-primary mb-5 "
               style={{ fontFamily: "'Kalam', cursive" }}
             >
-              GRILLED STEAK WITH CHIMICHURRI SAUCE
+              Coq Au Vin
             </h1>
-            <p className="text-xl mb-5">
-              Best steak for Chimichurri Sauce - in South America, cuts such as
-              flank, flat iron and skirt are popular for serving with Chimchurri
-              Sauce because they have really great beefy flavour that pairs so
-              well with this fresh, zingy sauce. However, Chimichurri will pair
-              beautifully with ANY steak!
+            <p className="text-xl mb-5 text-gray-300">
+              Coq au vin is delicious with anything starchy that can soak up the
+              wine sauce, such as potatoes—mashed or roasted—or crusty French
+              bread. Try coq au vin with rice, farro, couscous, egg noodles, or
+              any other grains or starches you have on hand.
             </p>
           </div>
           <div className="card h-full w-auto mx-5 lg:mx-10 bg-base-100 shadow-xl ">
@@ -77,14 +77,14 @@ const FlavorExplosion = () => {
               className="text-3xl text-primary mb-5 "
               style={{ fontFamily: "'Kalam', cursive" }}
             >
-              GRILLED STEAK WITH CHIMICHURRI SAUCE
+              MARGHERITA PIZZA
             </h1>
-            <p className="text-xl mb-5">
-              Best steak for Chimichurri Sauce - in South America, cuts such as
-              flank, flat iron and skirt are popular for serving with Chimchurri
-              Sauce because they have really great beefy flavour that pairs so
-              well with this fresh, zingy sauce. However, Chimichurri will pair
-              beautifully with ANY steak!
+            <p className="text-xl mb-5 text-gray-300">
+              Pizza Margherita (pronounced mahr-geh-ree-tah) is basically a
+              Neapolitan pizza, typically made with tomatoes, mozzarella cheese,
+              garlic, fresh basil, and extra-virgin olive oil. I think of it as
+              a sophisticated version of your basic cheese pizza and also a
+              wonderful Caprese salad, but with a crust.
             </p>
           </div>
         </div>
@@ -94,14 +94,14 @@ const FlavorExplosion = () => {
               className="text-3xl text-primary mb-5 "
               style={{ fontFamily: "'Kalam', cursive" }}
             >
-              GRILLED STEAK WITH CHIMICHURRI SAUCE
+              OSSO BUCO
             </h1>
-            <p className="text-xl mb-5">
-              Best steak for Chimichurri Sauce - in South America, cuts such as
-              flank, flat iron and skirt are popular for serving with Chimchurri
-              Sauce because they have really great beefy flavour that pairs so
-              well with this fresh, zingy sauce. However, Chimichurri will pair
-              beautifully with ANY steak!
+            <p className="text-xl mb-5 text-gray-300">
+              Osso buco is an Italian dish of braised veal shanks, which are
+              cross-cut from the leg bone beneath the knee and shoulder. The
+              shank is a tougher cut of meat, so slow cooking in liquid is
+              essential for the melt-in-your-mouth texture that osso buco is
+              known for.
             </p>
           </div>
           <div className="card h-full w-auto mx-5 lg:mx-10 bg-base-100 shadow-xl ">
