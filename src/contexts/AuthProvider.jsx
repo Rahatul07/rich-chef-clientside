@@ -29,13 +29,6 @@ const AuthProvider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
-  // const updateUserProfile = (userName) => {
-  //   // console.log("update name", userName);
-  //   return updateProfile(user, {
-  //     displayName: userName,
-  //   });
-  // };
-
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -56,13 +49,7 @@ const AuthProvider = ({ children }) => {
   const resetPassword = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
-  // const setNameAndPhoto = (userName, imageUrl) => {
-  //   setLoading(true);
-  //   return updateProfile(auth.currentUser, {
-  //     displayName: userName,
-  //     photoURL: imageUrl,
-  //   });
-  // };
+
   const authInfo = {
     auth,
     loading,

@@ -2,17 +2,26 @@ import React, { useState } from "react";
 import Ingredients from "../Ingredients/Ingredients";
 import { Rating } from "@smastrom/react-rating";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import Swal from "sweetalert2";
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 import "@smastrom/react-rating/style.css";
 const Recipes = ({ recipe }) => {
   const [fold, setFold] = useState();
   const [disabled, setDisabled] = useState(false);
-  const [isFavourite, setIsFavourite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
   const { cooking_method, ingredients, rating, recipe_img, recipe_name } =
     recipe;
+
   const handleClick = () => {
-    setIsFavourite(true);
+    setIsFavorite(!isFavorite);
     setDisabled(true);
+    Swal.fire({
+      icon: "success",
+      title: "Successful!",
+      text: "Added to favorite!",
+    });
   };
   return (
     <div>
@@ -65,7 +74,7 @@ const Recipes = ({ recipe }) => {
             <div className=" bottom-4 right-4 ">
               <p className="">
                 <button disabled={disabled} onClick={handleClick}>
-                  {isFavourite ? (
+                  {isFavorite ? (
                     <AiFillHeart className="text-red-600 text-2xl" />
                   ) : (
                     <AiOutlineHeart className="text-white text-2xl" />
