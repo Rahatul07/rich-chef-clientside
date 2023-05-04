@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+
 import { FaThumbsUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -53,12 +53,6 @@ const Card = ({ chef }) => {
                     <span className="ml-2">{likes}</span>
                   </p>
                 </div>
-              </div>
-              <div className="absolute bottom-4 right-4 ">
-                <p className="flex items-center justify-between  italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-xl">
-                  <AiOutlineHeart />
-                  <AiFillHeart className="text-red-600" />
-                </p>
               </div>
             </div>
           </div>

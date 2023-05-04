@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Ingredients from "../Ingredients/Ingredients";
+import { Rating } from "@smastrom/react-rating";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
+import "@smastrom/react-rating/style.css";
 const Recipes = ({ recipe }) => {
   const [fold, setFold] = useState();
 
@@ -42,24 +45,26 @@ const Recipes = ({ recipe }) => {
               </span>
             </p>
           )}
-          {/* <p className="text-white">
-            <span className="text-primary font-bold">COOKING METHOD:</span>
-            {cooking_method < 100 ? (
-              <>{cooking_method}</>
-            ) : (
-              <>{cooking_method.slice(0, 100)}</>
-            )}
-          </p> */}
-          <p className="text-white">
-            <span className="text-primary font-bold">RATING:</span> {rating}
-          </p>
+
           <div className="text-white ">
             <span className="text-primary font-bold">INGREDIENTS:</span>
             {ingredients.map((ingredient, index) => (
               <Ingredients key={index} ingredient={ingredient} />
             ))}
           </div>
-          <div></div>
+          <div className="flex justify-between">
+            {" "}
+            <div className="text-white flex gap-2 items-center">
+              <Rating style={{ maxWidth: 130 }} value={rating} readOnly />
+              {rating}
+            </div>
+            <div className=" bottom-4 right-4 ">
+              <p className="">
+                {/* <AiOutlineHeart className="text-white text-2xl" /> */}
+                <AiFillHeart className="text-red-600 text-2xl" />
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
