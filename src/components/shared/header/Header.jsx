@@ -1,14 +1,12 @@
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
-// import profile from "../../../assets/icon/profile.jpg";
+
 import { AuthContext } from "../../../contexts/AuthProvider";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
 
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -95,24 +93,19 @@ const Header = () => {
         </div>
 
         <div className="navbar-end ">
-          <div>
+          {/* <div>
             <div className="flex items-center justify-between  mr-5 relative text-2xl">
-              <AiFillHeart className="text-red-600 " />
-
-              <AiOutlineHeart />
+              
             </div>
-          </div>
+          </div> */}
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img title={user?.displayName} src={user?.photoURL} />
             </div>
           </label>
-          {/* <Link to="/blogs">
-          <button className="btn btn-primary">Learn More</button>
-        </Link> */}
         </div>
 
-        {/* <div className="ml-10 mr-5 lg:hidden">
+        <div className="ml-10 mr-5 lg:hidden">
           <button
             aria-label="Open Menu"
             title="Open Menu"
@@ -230,16 +223,9 @@ const Header = () => {
               </div>
             </div>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
-    // <div>
-    //   <div className="static ">
-    //     <div className="absolute top-0 w-full">
-    //       <NavBar />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
