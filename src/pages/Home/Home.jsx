@@ -1,16 +1,16 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Body from "../../components/shared/Body/Body";
 import Card from "../Card/Card";
 import { useLoaderData } from "react-router-dom";
 import FlavorExplosion from "../Flavor_Explosion/FlavorExplosion";
 import Banner from "../Banner/Banner";
 import Reviews from "../Reviews/Reviews";
-import Loading from "../Loading/Loading";
+import LazyLoad from "react-lazy-load";
 const Home = () => {
   const chefs = useLoaderData();
 
   return (
-    <Suspense fallback={<Loading />}>
+    <LazyLoad>
       <div>
         <Body />
         <h1
@@ -35,7 +35,7 @@ const Home = () => {
         <Banner />
         <Reviews />
       </div>
-    </Suspense>
+    </LazyLoad>
   );
 };
 

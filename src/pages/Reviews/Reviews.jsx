@@ -7,10 +7,15 @@ import img3 from "../../assets/reivew_images/03.png";
 import img4 from "../../assets/reivew_images/04.png";
 import img5 from "../../assets/reivew_images/05.png";
 import img6 from "../../assets/reivew_images/06.png";
+import { motion } from "framer-motion";
 
 const Reviews = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+    >
       <h1
         className=" font-bold  text-primary text-center text-5xl mb-10 mt-20"
         style={{ fontFamily: "'Montserrat', cursive" }}
@@ -241,7 +246,7 @@ const Reviews = () => {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 };
 
