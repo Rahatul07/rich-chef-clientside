@@ -3,10 +3,8 @@ import Ingredients from "../Ingredients/Ingredients";
 import { Rating } from "@smastrom/react-rating";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import Swal from "sweetalert2";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-
 import "@smastrom/react-rating/style.css";
+
 const Recipes = ({ recipe }) => {
   const [fold, setFold] = useState();
   const [disabled, setDisabled] = useState(false);

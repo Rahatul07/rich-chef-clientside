@@ -7,7 +7,7 @@ import img4 from "../../assets/cusines/04.png";
 
 const FlavorExplosion = () => {
   return (
-    <div className="mb-10 w-10/12 mx-auto">
+    <div className="mb-10 w-10/12 mx-auto mt-24">
       <h1
         className=" font-bold  text-primary text-center text-5xl mb-10"
         style={{ fontFamily: "'Montserrat', cursive" }}
@@ -16,7 +16,7 @@ const FlavorExplosion = () => {
       </h1>
 
       <h1
-        className="text-gray-300 text-5xl font-normal text-center mt-3 mb-10"
+        className="text-gray-300 text-3xl w-8/12 mx-auto font-normal text-center mt-3 mb-10"
         style={{ fontFamily: "'Satisfy', cursive" }}
       >
         A Rich-Chef restaurant beyond the boundaries of taste. If you love
