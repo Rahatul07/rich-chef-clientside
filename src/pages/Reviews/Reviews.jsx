@@ -18,10 +18,10 @@ const Reviews = () => {
         FOOD REVIEWS
       </h1>
       <div className="w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-20 mb-20">
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img1}
               alt="Movie"
             />
@@ -55,10 +55,10 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img2}
               alt="Movie"
             />
@@ -92,10 +92,10 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img3}
               alt="Movie"
             />
@@ -129,10 +129,10 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img4}
               alt="Movie"
             />
@@ -166,10 +166,10 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img5}
               alt="Movie"
             />
@@ -203,10 +203,10 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-        <div className="card card-side glass shadow-xl h-auto mb-5">
+        <div className="card card-side glass shadow-xl  mb-5 pl-5 md:pl-1">
           <figure>
             <img
-              className="w-36 h-auto m-5 rounded-2xl"
+              className=" h-36 w-36 m-5 rounded-2xl"
               src={img6}
               alt="Movie"
             />
