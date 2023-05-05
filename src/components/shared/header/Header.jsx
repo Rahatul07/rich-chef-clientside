@@ -3,9 +3,10 @@ import logo from "../../../assets/logo/02-01.png";
 import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../../../contexts/AuthProvider";
+import Hamburger from "hamburger-react";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-
+  const [isOpen, setOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogOut = () => {
     logOut()
@@ -103,27 +104,14 @@ const Header = () => {
           <button
             aria-label="Open Menu"
             title="Open Menu"
-            className="p-2 -mr-1 transition text-white duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+            className="p-2 -mr-1 transition text-primary duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
             onClick={() => setIsMenuOpen(true)}
           >
-            <svg className="w-5 text-white" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-              />
-              <path
-                fill="currentColor"
-                d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-              />
-            </svg>
+            <Hamburger toggled={isOpen} toggle={setOpen} />
           </button>
           {isMenuOpen && (
-            <div className="absolute z-10 top-0 left-0   w-full">
-              <div className="p-5  border bg-gray-700 rounded shadow-sm">
+            <div className="absolute z-10 top-0 left-0 border-2 border-primary  w-full">
+              <div className="p-5   bg-gray-700 rounded shadow-sm">
                 <div className="flex items-center  justify-between mb-4">
                   <div>
                     <div className="navbar-start ">
@@ -134,22 +122,17 @@ const Header = () => {
                     <button
                       aria-label="Close Menu"
                       title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition text-white duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      className="p-2 -mt-2 -mr-2 transition text-primary duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline "
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      <svg className="w-5  text-white" viewBox="0 0 24 24">
-                        <path
-                          fill="currentColor"
-                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                        />
-                      </svg>
+                      <Hamburger toggled={isOpen} toggle={setOpen} />
                     </button>
                   </div>
                 </div>
                 <nav>
-                  <div className="text-xl  uppercase h-12 pr-10 navbar-center bg-gray-700 text-center ">
-                    <ul className="pl-3 menu-horizontal px-1">
-                      <li className="ml-5">
+                  <div className="text-xl  uppercase h-full pr-10 navbar-center bg-gray-700  ">
+                    <ul className="pl-3  px-1">
+                      <li className="ml-5 mb-3 hover:border-2 border-primary hover:bg-primary hover:bg-opacity-30 px-5 py-3 rounded-xl  ">
                         <NavLink
                           to="/"
                           aria-label="Home"
@@ -162,7 +145,7 @@ const Header = () => {
                         </NavLink>
                       </li>
 
-                      <li className="ml-5  ">
+                      <li className="ml-5 mb-3 hover:border-2 border-primary hover:bg-primary hover:bg-opacity-30 px-5 py-3 rounded-xl ">
                         <NavLink
                           to="/blogs"
                           aria-label="blogs"
@@ -176,7 +159,7 @@ const Header = () => {
                       </li>
                       {user ? (
                         <>
-                          <li className="ml-5">
+                          <li className="ml-5 mb-3 hover:border-2 border-primary hover:bg-primary hover:bg-opacity-30 px-5 py-3 rounded-xl ">
                             <NavLink
                               aria-label="logOut"
                               title="logOut"
@@ -191,7 +174,7 @@ const Header = () => {
                         </>
                       ) : (
                         <>
-                          <li className="ml-5">
+                          <li className="ml-5 mb-3 hover:border-2 border-primary hover:bg-primary hover:bg-opacity-30 px-5 py-3 rounded-xl ">
                             <NavLink
                               to="/logIn"
                               aria-label="logIn"
@@ -203,7 +186,7 @@ const Header = () => {
                               LogIn
                             </NavLink>
                           </li>
-                          <li className="ml-5">
+                          <li className="ml-5 mb-3 hover:border-2 border-primary hover:bg-primary hover:bg-opacity-30 px-5 py-3 rounded-xl ">
                             <NavLink
                               to="/register"
                               aria-label="register"
