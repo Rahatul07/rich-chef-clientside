@@ -6,6 +6,7 @@ import FlavorExplosion from "../Flavor_Explosion/FlavorExplosion";
 import Banner from "../Banner/Banner";
 import Reviews from "../Reviews/Reviews";
 import LazyLoad from "react-lazy-load";
+import App from "../../App";
 const Home = () => {
   const chefs = useLoaderData();
 
@@ -33,6 +34,7 @@ const Home = () => {
         </div>
         <FlavorExplosion />
         <Banner />
+        <App />
         <Reviews />
       </div>
     </LazyLoad>

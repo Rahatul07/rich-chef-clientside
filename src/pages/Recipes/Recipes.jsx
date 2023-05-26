@@ -27,7 +27,7 @@ const Recipes = ({ recipe }) => {
       <div>
         <div className="card w-96 h-full shadow-xl glass">
           <figure>
-            <img src={recipe_img} alt="Shoes" />
+            <img src={recipe_img} alt="recipe" />
           </figure>
           <div className="card-body">
             <h2 className="card-title text-primary uppercase ">
